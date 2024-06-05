@@ -1,0 +1,17 @@
+server:
+  port: 8053
+
+spring:
+  application:
+    name: consumer
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${POSTGRES_URL:localhost:5437}/postrgres_db
+    username: ${POSTGRES_USER:adm}
+    password: ${POSTGRES_PASSWORD:root}
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.ddl-auto: validate
+    properties.hibernate.boot.allow_jdbc_metadata_access: false
+    show-sql: true

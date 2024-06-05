@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+
+  kafka_net_db:
+    image: postgres:12-alpine
+    container_name: kafka_net_db
+    networks:
+      - kafkaNetwork
+    environment:
+      - POSTGRES_USER=adm
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=postrgres_db
+
+networks:
+  kafkaNetwork:
+    driver: bridge
