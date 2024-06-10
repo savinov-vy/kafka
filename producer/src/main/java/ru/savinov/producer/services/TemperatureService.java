@@ -21,7 +21,7 @@ public class TemperatureService {
     private KafkaTemplate<String, String> kafkaTemplate;
     private ObjectMapper objectMapper;
 
-    @Scheduled(fixedDelay = 2000)
+    @Scheduled(cron = "0 * * * * *")
     public void send() {
         TemperatureDto toHandle = TemperatureDto.of(5, LocalDateTime.now(), Location.BAIKAL);
         try {
